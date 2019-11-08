@@ -197,7 +197,7 @@ export default {
   methods: {
     login() {
       axios
-        .post("http://172.16.16.100:3000/api/user/login", this.login_info)
+        .post("http://localhost:3000/api/user/login", this.login_info)
         .then(res => {
           // console.log(res.data.res.token);
           if (res.data.res_code === 200) {
@@ -214,7 +214,7 @@ export default {
     register() {
       if (this.agree) {
         axios
-          .post("http://172.16.16.100:3000/api/user", this.register_info)
+          .post("http://localhost:3000/api/user", this.register_info)
           .then(res => {
             // console.log(res.data.res.token);
             if (res.data.res_code === 200) {

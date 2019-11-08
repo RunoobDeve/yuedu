@@ -27,7 +27,7 @@ export default {
   methods: {
     getArticle(id,page=1) {
       axios
-        .get(`http://172.16.16.100:3000/api/articles/${id}/page/${page}`)
+        .get(`http://localhost:3000/api/articles/${id}/page/${page}`)
         .then(res => {
           this.articles = res.data.res.articles;
           // console.log(this.articles);
@@ -37,7 +37,7 @@ export default {
 
     getTop10(id) {
       axios
-        .get(`http://172.16.16.100:3000/api/articles/${id}/top10`)
+        .get(`http://localhost:3000/api/articles/${id}/top10`)
         .then(res => {
           // console.log(res);
           this.articlesTop10 = res.data.res.articles;

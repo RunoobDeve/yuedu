@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     getTypes() {
-      axios.get("http://172.16.16.100:3000/api/types").then(res => {
+      axios.get("http://localhost:3000/api/types").then(res => {
         this.menu = res.data.res;
       });
     }

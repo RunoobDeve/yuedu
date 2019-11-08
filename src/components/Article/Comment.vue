@@ -67,7 +67,7 @@ export default {
   methods: {
     addComment() {
       axios
-        .post("http://172.16.16.100:3000/api/comment", {
+        .post("http://localhost:3000/api/comment", {
           article_id: this.$route.params.id,
           content: this.content
         })
@@ -80,7 +80,7 @@ export default {
         });
     },
     delComment(id, index) {
-      axios.delete("http://172.16.16.100:3000/api/comment/" + id).then(res => {
+      axios.delete("http://localhost:3000/api/comment/" + id).then(res => {
         // console.log(11);
         
         // console.log(res);

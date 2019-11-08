@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     getCollect() {
-      axios.get("http://172.16.16.100:3000/api/articles/like").then(res => {
+      axios.get("http://localhost:3000/api/articles/like").then(res => {
         // console.log(res);
         this.Articles=res.data.res
       });

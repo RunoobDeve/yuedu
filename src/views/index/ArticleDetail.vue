@@ -120,13 +120,13 @@ export default {
   methods: {
     getArticle(id) {
       axios
-        .get(`http://172.16.16.100:3000/api/article/${id}`)
+        .get(`http://localhost:3000/api/article/${id}`)
         .then(res => {
           // console.log(res);
           this.article = res.data.res;
           const typeId = this.article.type_id;
           return axios.get(
-            `http://172.16.16.100:3000/api/articles/${typeId}/rand`
+            `http://localhost:3000/api/articles/${typeId}/rand`
           );
         })
         .then(res => {
@@ -134,13 +134,13 @@ export default {
         });
     },
     getArticleCarousel() {
-      axios.get("http://172.16.16.100:3000/api/articles/rand").then(res => {
+      axios.get("http://localhost:3000/api/articles/rand").then(res => {
         this.articles = res.data.res;
       });
     },
     getComments(id) {
       axios
-        .get(`http://172.16.16.100:3000/api/comments/${id}/page/1`)
+        .get(`http://localhost:3000/api/comments/${id}/page/1`)
         .then(res => {
           if (res.data.res_code === 200) {
             this.comments = res.data.res;
@@ -151,7 +151,7 @@ export default {
       // console.log(id);
       if (this.article.isLiked) {
         axios
-          .delete(`http://172.16.16.100:3000/api/article/${id}/like `)
+          .delete(`http://localhost:3000/api/article/${id}/like `)
           .then(res => {
             if (res.data.res_code === 200) { 
               (this.article.isLiked = false), this.article.like_count--;
@@ -159,7 +159,7 @@ export default {
           });
       } else {
         axios
-          .post(`http://172.16.16.100:3000/api/article/${id}/like `)
+          .post(`http://localhost:3000/api/article/${id}/like `)
           .then(res => {
             if (res.data.res_code === 200) {
               (this.article.isLiked = true), this.article.like_count++;
