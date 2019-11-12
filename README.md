@@ -69,7 +69,8 @@ axios.interceptors.response.use(res=>{
 
 ***API设置***
 
-配置PHPstudy、mysql,将API文件部署到phpstudy服务器中，将db文件导入到MySQL中
+配置PHPstudy、mysql,将db文件导入到MySQL中,
+安装node.js 在API文件中打开命令窗口输入npm i安装依赖包，然后输入npm run dev启动接口
 
 
 ## Project setup
